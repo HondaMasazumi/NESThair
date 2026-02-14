@@ -349,53 +349,47 @@ textarea {
 }
 
 /* =========================
-   SP対応（iPhone幅など）
+   SP応急処置（スクショ用）
    ========================= */
 @media (max-width: 768px) {
 
-  /* 1) 全体をスマホ幅に */
-  #wrapper,
+  /* 全体をスマホ幅に */
+  #wrapper { width: 100%; margin: 0; }
+
+  /* はみ出し防止 */
+  img { max-width: 100%; height: auto; }
+
+  /* ヘッダー：float解除＋高さ固定解除 */
   header {
     width: 100%;
-  }
-
-  /* 2) はみ出し防止（念のため） */
-  img {
-    max-width: 100%;
     height: auto;
+    padding: 16px;
   }
+  header h1 { float: none; margin-bottom: 10px; }
+  header nav { float: none; margin-top: 8px; }
+  header li { float: none; margin: 0 0 6px 0; }
+  #nav_tel { position: static; margin-top: 10px; }
 
-  /* 3) メイン画像を画面幅にフィット */
+  /* メイン画像：高さ固定が崩れの原因なので解除 */
   #mainimage {
     width: 100%;
-  }
-  #mainimage img {
-    display: block;
-    width: 100%;
     height: auto;
+    border: 0;
+    margin: 10px 0;
   }
+  #mainimage img { display: block; width: 100%; height: auto; }
 
-  /* 4) 2カラムを1カラムに（左→右の順に縦並び） */
-  #left,
-  #right {
+  /* 2カラム→1カラム */
+  #left, #right {
     float: none;
     width: auto;
-    margin: 0 20px 20px; /* 余白は好みで */
+    margin: 0 12px 12px;
   }
 
-  /* 5) headerが高さ49px固定で崩れやすいので解除 */
-  header {
-    height: auto;
-  }
+  /* 新着情報の枠：横幅固定を解除 */
+  #left ul { width: auto; }
 
-  /* 6) ナビが横並びで辛い場合は縦並びへ（必要なら） */
-  nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    padding: 0;
-  }
-  nav li {
-    list-style: none;
-  }
+  /* 右のボタン：幅100%っぽく */
+  #right { height: auto; }
+  #right a { width: auto; }
 }
