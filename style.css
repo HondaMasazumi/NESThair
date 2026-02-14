@@ -407,3 +407,33 @@ body {
   min-width: 0;
 }
 }
+
+/* ===== 提出用：SP応急処置（最後に貼る） ===== */
+@media (max-width: 768px) {
+
+  html, body { width: 100%; }
+  body { overflow-x: hidden; }
+
+  #wrapper { width: 100%; margin: 0; }
+
+  header { width: 100%; height: auto; padding: 12px; box-sizing: border-box; }
+  header h1 { float: none; height: auto; line-height: 1.2; }
+  header nav { float: none; margin-top: 10px; }
+  header li { float: none; margin: 0 0 8px 0; }
+  #nav_tel { position: static; margin-top: 10px; }
+
+  #mainimage { width: 100%; height: auto; border: 0; margin: 10px 0; }
+  #mainimage img { width: 100%; height: auto; display: block; }
+
+  #left, #right {
+    float: none;
+    width: auto;
+    margin: 0 12px 12px;
+    box-sizing: border-box;
+  }
+
+  #left ul { width: auto; }
+
+  #right { height: auto; }
+  #right a { width: auto; }
+}
