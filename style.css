@@ -347,3 +347,55 @@ textarea {
     cursor: pointer;
     opacity: 0.8;
 }
+
+/* =========================
+   SP対応（iPhone幅など）
+   ========================= */
+@media (max-width: 768px) {
+
+  /* 1) 全体をスマホ幅に */
+  #wrapper,
+  header {
+    width: 100%;
+  }
+
+  /* 2) はみ出し防止（念のため） */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* 3) メイン画像を画面幅にフィット */
+  #mainimage {
+    width: 100%;
+  }
+  #mainimage img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* 4) 2カラムを1カラムに（左→右の順に縦並び） */
+  #left,
+  #right {
+    float: none;
+    width: auto;
+    margin: 0 20px 20px; /* 余白は好みで */
+  }
+
+  /* 5) headerが高さ49px固定で崩れやすいので解除 */
+  header {
+    height: auto;
+  }
+
+  /* 6) ナビが横並びで辛い場合は縦並びへ（必要なら） */
+  nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0;
+  }
+  nav li {
+    list-style: none;
+  }
+}
